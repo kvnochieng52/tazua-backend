@@ -212,7 +212,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="footer-copyright">
-                                <p>&copy; {{ date('Y') }} <span>Tazua</span>. All Rights Reserved</p>
+                                <p>&copy; {{ date('Y') }} <span>Tazua Africa</span>. All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
