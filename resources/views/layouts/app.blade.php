@@ -121,6 +121,7 @@
 
                         <!-- Store Badges -->
                         <div class="navbar-stores ml-3 d-flex align-items-center">
+                            <!-- Commented out until app store publishing is complete
                             <a href="#" class="store-badge mr-2">
                                 <img src="{{ asset('images/store_badges/appstore.png') }}" alt="Download on App Store"
                                     height="35">
@@ -128,6 +129,12 @@
                             <a href="#" class="store-badge">
                                 <img src="{{ asset('images/store_badges/googleplay.png') }}"
                                     alt="Get it on Google Play" height="35">
+                            </a>
+                            -->
+                            <!-- APK Download button -->
+                            <a href="tazua_app.apk" class="store-badge">
+                                <img src="{{ asset('images/store_badges/apk_download.png') }}"
+                                    alt="Download APK" height="35">
                             </a>
                         </div>
                     </div>
@@ -193,6 +200,7 @@
                     <!-- FOOTER STORE BADGES -->
                     <div class="col-md-4 col-lg-3">
                         <div class="footer-stores-badge text-right m-bottom-40">
+                            <!-- Commented out until app store publishing is complete
                             <a href="#" class="store">
                                 <img class="appstore-original" src="{{ asset('images/store_badges/appstore.png') }}"
                                     width="160" height="50" alt="appstore-logo" />
@@ -201,6 +209,12 @@
                                 <img class="googleplay-original"
                                     src="{{ asset('images/store_badges/googleplay.png') }}" width="171"
                                     height="50" alt="googleplay-logo" />
+                            </a>
+                            -->
+                            <!-- APK Download button -->
+                            <a href="tazua_app.apk" class="store">
+                                <img src="{{ asset('images/store_badges/apk_download.png') }}"
+                                    width="171" height="50" alt="Download APK" />
                             </a>
                         </div>
                     </div>
