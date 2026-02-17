@@ -18,10 +18,10 @@
                                 income</span>
                         </h2>
 
-                        <!-- Get Started Button -->
+                        <!-- APK Download Button -->
                         <div class="hero-btn animated" data-animation="fadeInUp" data-animation-delay="500">
-                            <a class="btn btn-green" href="{{ route('blogs.index') }}">
-                                Get Started
+                            <a class="btn btn-green" href="tazua_app.apk">
+                                Download APK
                             </a>
                         </div>
 
