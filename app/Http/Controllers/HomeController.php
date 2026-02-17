@@ -35,4 +35,12 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+
+    /**
+     * Display the privacy policy page.
+     */
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
 }

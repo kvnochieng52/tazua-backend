@@ -47,8 +47,8 @@
                             </div>
                             <div class="contact-details">
                                 <h5>Email Us</h5>
-                                <p><a href="mailto:hello@tazua.africa">hello@tazua.africa</a><br>
-                                    <a href="mailto:support@tazua.africa">support@tazua.africa</a>
+                                <p><a href="mailto:info@tazua.africa">info@tazua.africa</a><br>
+                                    <a href="mailto:jambo@tazua.africa">jambo@tazua.africa</a>
                                 </p>
                             </div>
                         </div>
@@ -67,10 +67,10 @@
                         <div class="contact-social">
                             <h6>Follow Us</h6>
                             <div class="social-links">
-                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://x.com/tazuaafrica" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/tazuaafrica" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@tazuaafrica" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                                <a href="https://www.linkedin.com/in/tazua-africa-a3b0223a9" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
 
