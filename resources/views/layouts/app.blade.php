@@ -74,6 +74,23 @@
                 padding: 10px 0;
             }
         }
+
+        .apk-instructions-list {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .apk-instructions-list li {
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .apk-section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #222;
+        }
     </style>
 </head>
 
@@ -115,6 +132,7 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('faqs.index') }}">FAQ</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('blogs.index') }}">Blog</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                         </ul>
@@ -132,9 +150,10 @@
                             </a>
                             -->
                             <!-- APK Download button -->
-                            <a href="tazua_app.apk" class="store-badge">
-                                <img src="{{ asset('images/store_badges/apk_download.png') }}"
-                                    alt="Download APK" height="35">
+                            <a href="#" class="store-badge apk-download-trigger"
+                                data-apk-link="{{ asset('tazua_app.apk') }}">
+                                <img src="{{ asset('images/store_badges/apk_download.png') }}" alt="Download APK"
+                                    height="35">
                             </a>
                         </div>
                     </div>
@@ -213,9 +232,10 @@
                             </a>
                             -->
                             <!-- APK Download button -->
-                            <a href="tazua_app.apk" class="store">
-                                <img src="{{ asset('images/store_badges/apk_download.png') }}"
-                                    width="171" height="50" alt="Download APK" />
+                            <a href="#" class="store apk-download-trigger"
+                                data-apk-link="{{ asset('tazua_app.apk') }}">
+                                <img src="{{ asset('images/store_badges/apk_download.png') }}" width="171"
+                                    height="50" alt="Download APK" />
                             </a>
                         </div>
                     </div>
@@ -238,6 +258,58 @@
 
     </div> <!-- END PAGE CONTENT -->
 
+    <div class="modal fade" id="apkInstructionsModal" tabindex="-1" role="dialog"
+        aria-labelledby="apkInstructionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apkInstructionsModalLabel">Tazua APK Installation & Creator Onboarding
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="apk-section-title">Part 1: Download The APK</h6>
+                    <ol class="apk-instructions-list">
+                        <li><strong>Tap to download:</strong> <a href="{{ asset('tazua_app.apk') }}" download>Download
+                                Tazua APK</a>. If your browser warns that the file might be harmful, tap
+                            <strong>Download anyway</strong>.
+                            <div class="m-top-10">
+                                <a href="{{ asset('tazua_app.apk') }}" class="btn btn-green apk-modal-download-link" download>
+                                    Download APK Now
+                                </a>
+                            </div>
+                        </li>
+                        <li><strong>Allow install permission:</strong> Go to <strong>Settings &gt; Apps &gt; Special App
+                                Access &gt; Install Unknown Apps</strong>. Choose the browser you used (for example,
+                            Chrome), then turn on <strong>Allow from this source</strong>.</li>
+                        <li><strong>Install the app:</strong> Open your <strong>Downloads</strong> folder, tap the
+                            <strong>Tazua APK</strong> file, then tap <strong>Install</strong>.</li>
+                        <li><strong>Keep your phone safe:</strong> After installation, return to the same settings page
+                            and turn <strong>Allow from this source</strong> back off.</li>
+                    </ol>
+
+                    <h6 class="apk-section-title">Part 2: Joining as a Creator</h6>
+                    <ol class="apk-instructions-list">
+                        <li><strong>Create your account:</strong> Open the app and sign up with your email address.
+                            You’ll receive a <strong>6-digit OTP</strong> by email to verify your identity.</li>
+                        <li><strong>Open Creator Studio:</strong> After logging in, go to <strong>Creator
+                                Studio</strong> to manage your content and track earnings.</li>
+                        <li><strong>Complete your setup:</strong> Follow the prompts to finish your profile and link
+                            your wallet for instant <strong>M-Pesa withdrawals</strong>.</li>
+                        <li><strong>Tax tip:</strong> Add your <strong>KRA PIN</strong> in settings so you are charged
+                            the <strong>5% resident tax rate</strong> instead of the <strong>20% non-resident
+                                rate</strong>.</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- EXTERNAL SCRIPTS -->
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -256,6 +328,33 @@
     <script src="{{ asset('js/comment-form.js') }}"></script>
     <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apkModal = $('#apkInstructionsModal');
+            const downloadButtons = document.querySelectorAll('#apkInstructionsModal .apk-modal-download-link');
+            const instructionDownloadLink = document.querySelector('#apkInstructionsModal .apk-instructions-list li a[download]');
+
+            document.querySelectorAll('.apk-download-trigger').forEach((trigger) => {
+                trigger.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    const apkLink = this.getAttribute('data-apk-link');
+                    if (apkLink) {
+                        if (instructionDownloadLink) {
+                            instructionDownloadLink.setAttribute('href', apkLink);
+                        }
+
+                        downloadButtons.forEach((button) => {
+                            button.setAttribute('href', apkLink);
+                        });
+                    }
+
+                    apkModal.modal('show');
+                });
+            });
+        });
+    </script>
 
     @stack('scripts')
 </body>

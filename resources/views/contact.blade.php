@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us - Tazua Creator Platform')
-@section('meta_description', 'Get in touch with Tazua. Contact us for support, partnerships, or questions about our
+@section('meta_description',
+    'Get in touch with Tazua. Contact us for support, partnerships, or questions about our
     creator platform for Kenyan creators.')
 
 @section('content')
@@ -67,10 +68,14 @@
                         <div class="contact-social">
                             <h6>Follow Us</h6>
                             <div class="social-links">
-                                <a href="https://x.com/tazuaafrica" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/tazuaafrica" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.tiktok.com/@tazuaafrica" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
-                                <a href="https://www.linkedin.com/in/tazua-africa-a3b0223a9" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://x.com/tazuaafrica" target="_blank" class="social-link"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/tazuaafrica" target="_blank" class="social-link"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@tazuaafrica" target="_blank" class="social-link"><i
+                                        class="fab fa-tiktok"></i></a>
+                                <a href="https://www.linkedin.com/in/tazua-africa-a3b0223a9" target="_blank"
+                                    class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
 

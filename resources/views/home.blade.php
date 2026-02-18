@@ -20,7 +20,8 @@
 
                         <!-- APK Download Button -->
                         <div class="hero-btn animated" data-animation="fadeInUp" data-animation-delay="500">
-                            <a class="btn btn-green" href="tazua_app.apk">
+                            <a class="btn btn-green apk-download-trigger" href="#"
+                                data-apk-link="{{ asset('tazua_app.apk') }}">
                                 Download APK
                             </a>
                         </div>
@@ -97,6 +98,49 @@
 
         </div>
     </section>
+
+    <section id="intro-video-option-2" class="intro-video-section division">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="intro-video-card text-center">
+                        <h4>See How Tazua Works</h4>
+                        <p>Watch this quick intro without leaving the website.</p>
+                        <a href="#" class="intro-video-thumb-link" data-toggle="modal" data-target="#introVideoModal"
+                            data-video-embed="https://www.youtube.com/embed/CrEcmOVZNh0?autoplay=1&amp;rel=0">
+                            <img src="https://img.youtube.com/vi/CrEcmOVZNh0/maxresdefault.jpg"
+                                alt="Tazua intro video thumbnail" class="img-fluid intro-video-thumb">
+                            <span class="intro-video-overlay">
+                                <span class="intro-video-play"><i class="fas fa-play"></i></span>
+                                <span class="intro-video-label">Watch Intro Video</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="introVideoModal" tabindex="-1" role="dialog" aria-labelledby="introVideoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="introVideoModalLabel">Tazua Intro Video</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="intro-video-frame-wrap">
+                        <iframe id="introVideoFrame" src="" title="Tazua Intro Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- SCREENSHOTS-1 -->
     <section id="screens-1" class="bg-scroll bg-green screens-section division"
@@ -246,61 +290,28 @@
             </div>
 
             <div class="row">
-                <!-- QUESTIONS HOLDER -->
-                <div class="col-lg-6">
-                    <div class="questions-holder">
+                @php
+                    $faqChunks = collect($featuredFaqs ?? [])->chunk(3);
+                @endphp
 
-                        <!-- QUESTION #1 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="300">
-                            <h5 class="h5-sm">How do I get started on Tazua?</h5>
-                            <p>Getting started is simple! Sign up for an account, complete your creator profile, and start
-                                building your audience. You can immediately begin earning through tips, subscriptions, and
-                                crowdfunding campaigns.</p>
+                @foreach ($faqChunks as $chunk)
+                    <div class="col-lg-6">
+                        <div class="questions-holder">
+                            @foreach ($chunk as $index => $faq)
+                                <div class="question animated" data-animation="fadeInUp"
+                                    data-animation-delay="{{ 300 + $index * 100 }}">
+                                    <h5 class="h5-sm">{{ $faq['question'] }}</h5>
+                                    <p>{{ $faq['answer'] }}</p>
+                                </div>
+                            @endforeach
                         </div>
-
-                        <!-- QUESTION #2 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="400">
-                            <h5 class="h5-sm">What payment methods are supported?</h5>
-                            <p>We support all major mobile money services in Kenya including M-Pesa, Airtel Money, and
-                                T-Kash. Fans can support you using the payment method they're most comfortable with.</p>
-                        </div>
-
-                        <!-- QUESTION #3 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="500">
-                            <h5 class="h5-sm">How quickly can I withdraw my earnings?</h5>
-                            <p>There are no minimum withdrawal limits! You can withdraw your earnings to your mobile wallet
-                                instantly, whenever you need the money.</p>
-                        </div>
-
                     </div>
-                </div>
+                @endforeach
+            </div>
 
-                <!-- QUESTIONS HOLDER -->
-                <div class="col-lg-6">
-                    <div class="questions-holder">
-
-                        <!-- QUESTION #4 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="300">
-                            <h5 class="h5-sm">What types of content can I monetize?</h5>
-                            <p>All types of creative content! Whether you're a musician, writer, podcaster, artist, or
-                                educator - if you create content that people value, you can monetize it on Tazua.</p>
-                        </div>
-
-                        <!-- QUESTION #5 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="400">
-                            <h5 class="h5-sm">How much does Tazua charge?</h5>
-                            <p>We keep our fees low so you can keep more of what you earn. Our transparent pricing ensures
-                                you always know exactly how much you'll receive from each transaction.</p>
-                        </div>
-
-                        <!-- QUESTION #6 -->
-                        <div class="question animated" data-animation="fadeInUp" data-animation-delay="500">
-                            <h5 class="h5-sm">Can I use Tazua alongside other platforms?</h5>
-                            <p>Absolutely! Tazua is designed to complement your existing social media presence. You own your
-                                audience data and can direct followers from any platform to support you on Tazua.</p>
-                        </div>
-
-                    </div>
+            <div class="row m-top-30">
+                <div class="col-12 text-center">
+                    <a href="{{ route('faqs.index') }}" class="btn btn-green">See All FAQs</a>
                 </div>
             </div>
         </div>
@@ -360,6 +371,89 @@
 
         .hero-links {
             margin-top: 30px;
+        }
+
+        .intro-video-section {
+            background: #ffffff;
+            padding: 70px 0;
+        }
+
+        .intro-video-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro-video-card h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .intro-video-card p {
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .intro-video-thumb-link {
+            display: block;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .intro-video-thumb {
+            width: 100%;
+            display: block;
+        }
+
+        .intro-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: background 0.2s ease;
+        }
+
+        .intro-video-thumb-link:hover .intro-video-overlay {
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .intro-video-play {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #44ce6f;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .intro-video-label {
+            font-weight: 600;
+        }
+
+        .intro-video-frame-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .intro-video-frame-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .hero-links .link-btn {
@@ -468,5 +562,36 @@
             border-color: #667eea;
             color: white;
         }
+
+        @media (max-width: 768px) {
+            .intro-video-card {
+                padding: 25px 20px;
+            }
+        }
     </style>
+@endpush
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const introVideoModal = document.getElementById('introVideoModal');
+            const introVideoFrame = document.getElementById('introVideoFrame');
+            const introVideoTrigger = document.querySelector('.intro-video-thumb-link');
+
+            if (introVideoTrigger && introVideoFrame) {
+                introVideoTrigger.addEventListener('click', function() {
+                    const embedUrl = this.getAttribute('data-video-embed');
+                    if (embedUrl) {
+                        introVideoFrame.setAttribute('src', embedUrl);
+                    }
+                });
+            }
+
+            if (introVideoModal && introVideoFrame) {
+                $('#introVideoModal').on('hidden.bs.modal', function() {
+                    introVideoFrame.setAttribute('src', '');
+                });
+            }
+        });
+    </script>
 @endpush
