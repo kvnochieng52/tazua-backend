@@ -4,8 +4,7 @@
 
 @section('content')
     <!-- LOGIN HERO SECTION -->
-    <div id="login-hero" class="login-hero-section"
-        style="background: white; padding-top: 120px; padding-bottom: 80px;">
+    <div id="login-hero" class="login-hero-section" style="background: white; padding-top: 120px; padding-bottom: 80px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
@@ -21,14 +20,9 @@
                             <!-- Email Field -->
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email Address</label>
-                                <input type="email" 
-                                       id="email" 
-                                       name="email" 
-                                       class="form-control @error('email') is-invalid @enderror" 
-                                       value="{{ old('email') }}" 
-                                       required 
-                                       autocomplete="email" 
-                                       autofocus>
+                                <input type="email" id="email" name="email"
+                                    class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
+                                    required autocomplete="email" autofocus>
                                 @error('email')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
@@ -39,12 +33,9 @@
                             <!-- Password Field -->
                             <div class="form-group mb-4">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" 
-                                       id="password" 
-                                       name="password" 
-                                       class="form-control @error('password') is-invalid @enderror" 
-                                       required 
-                                       autocomplete="current-password">
+                                <input type="password" id="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror" required
+                                    autocomplete="current-password">
                                 @error('password')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
@@ -72,7 +63,7 @@
                             <!-- Register Link -->
                             <div class="text-center">
                                 <p class="mb-0">
-                                    Don't have an account? 
+                                    Don't have an account?
                                     <a href="{{ route('register') }}" class="text-primary">Register here</a>
                                 </p>
                             </div>
@@ -91,19 +82,19 @@
         .navbar-dark .navbar-nav .nav-link {
             color: #333 !important;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             color: #e5841d !important;
         }
-        
+
         .navbar-dark .navbar-brand {
             color: #333 !important;
         }
-        
+
         .navbar-toggler {
             border-color: #333 !important;
         }
-        
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
         }
@@ -118,7 +109,7 @@
             background: #fff;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid #e9ecef;
         }
 

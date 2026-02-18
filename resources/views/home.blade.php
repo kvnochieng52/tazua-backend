@@ -32,7 +32,7 @@
                 <!-- HERO IMAGE -->
                 <div class="col-md-5 col-lg-4 offset-lg-2 animated" data-animation="fadeInRight" data-animation-delay="500">
                     <div class="hero-img">
-                        <img class="img-fluid" src="{{ asset('images/hero-10-img.png') }}" alt="hero-image">
+                        <img class="img-fluid" src="{{ asset('images/hero-1000-img.png') }}" alt="hero-image">
                     </div>
                 </div>
 
