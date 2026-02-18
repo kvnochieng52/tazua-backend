@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'name' => 'Kevin Ochieng',
             'email' => 'kvnochieng52@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('password'),
+            'password' => Hash::make('Co!nt@nt254'), // Use a secure password
         ]);
 
         echo "Test user created successfully!\n";
