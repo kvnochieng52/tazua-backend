@@ -13,3 +13,8 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# Always allow portfolio images to be tracked
+!/public/images/
+!/public/images/portfolio/
+!/public/images/portfolio/**
