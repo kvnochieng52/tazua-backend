@@ -163,42 +163,42 @@
 
                 <!-- Screen #1 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-1.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-1.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #2 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-2.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-2.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #3 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-3.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-3.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #4 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-4.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-4.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #5 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-5.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-5.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #6 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-6.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-6.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #7 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-7.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-7.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
                 <!-- Screen #8 -->
                 <div class="carousel-item">
-                    <img src="{{ asset('images/portfolio/screen-8.jpg') }}" alt="screenshot">
+                    <img src="{{ asset('images/portfolio/screen-8.jpg') }}?v={{ time() }}" alt="screenshot">
                 </div>
 
             </div>

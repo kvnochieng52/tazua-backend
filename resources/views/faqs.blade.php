@@ -4,7 +4,8 @@
 @section('meta_description', 'Find all frequently asked questions for creators and fans on Tazua Africa.')
 
 @section('content')
-    <section id="faqs-all" class="faqs-all-section division" style="padding-top: 120px; padding-bottom: 100px; background: #f8f9fa;">
+    <section id="faqs-all" class="faqs-all-section division"
+        style="padding-top: 120px; padding-bottom: 100px; background: #f8f9fa;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1 section-title text-center">

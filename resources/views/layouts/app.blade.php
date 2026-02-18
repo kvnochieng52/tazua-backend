@@ -276,7 +276,8 @@
                                 Tazua APK</a>. If your browser warns that the file might be harmful, tap
                             <strong>Download anyway</strong>.
                             <div class="m-top-10">
-                                <a href="{{ asset('tazua_app.apk') }}" class="btn btn-green apk-modal-download-link" download>
+                                <a href="{{ asset('tazua_app.apk') }}" class="btn btn-green apk-modal-download-link"
+                                    download>
                                     Download APK Now
                                 </a>
                             </div>
@@ -285,7 +286,8 @@
                                 Access &gt; Install Unknown Apps</strong>. Choose the browser you used (for example,
                             Chrome), then turn on <strong>Allow from this source</strong>.</li>
                         <li><strong>Install the app:</strong> Open your <strong>Downloads</strong> folder, tap the
-                            <strong>Tazua APK</strong> file, then tap <strong>Install</strong>.</li>
+                            <strong>Tazua APK</strong> file, then tap <strong>Install</strong>.
+                        </li>
                         <li><strong>Keep your phone safe:</strong> After installation, return to the same settings page
                             and turn <strong>Allow from this source</strong> back off.</li>
                     </ol>
@@ -333,7 +335,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const apkModal = $('#apkInstructionsModal');
             const downloadButtons = document.querySelectorAll('#apkInstructionsModal .apk-modal-download-link');
-            const instructionDownloadLink = document.querySelector('#apkInstructionsModal .apk-instructions-list li a[download]');
+            const instructionDownloadLink = document.querySelector(
+                '#apkInstructionsModal .apk-instructions-list li a[download]');
 
             document.querySelectorAll('.apk-download-trigger').forEach((trigger) => {
                 trigger.addEventListener('click', function(event) {
