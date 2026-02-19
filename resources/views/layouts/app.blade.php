@@ -14,12 +14,11 @@
     <title>@yield('title', 'Tazua - Creator Platform for Kenya')</title>
 
     <!-- FAVICON AND TOUCH ICONS -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/apple-touch-icon-152x152.png') }}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('images/apple-touch-icon-120x120.png') }}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/apple-touch-icon-76x76.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -208,9 +207,9 @@
                         <div class="footer-links m-bottom-40">
                             <h5 class="h5-md">Support</h5>
                             <ul class="foo-links clearfix">
-                                <li><a href="#faq">FAQs</a></li>
-                                <li><a href="#help">Help</a></li>
-                                <li><a href="#support">Support</a></li>
+                                <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
+                                <li><a href="{{ route('contact') }}">Help</a></li>
+                                <li><a href="{{ route('contact') }}">Support</a></li>
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                             </ul>

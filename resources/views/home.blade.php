@@ -107,13 +107,14 @@
                         <h4>See How Tazua Works</h4>
                         <p>Watch this quick intro without leaving the website.</p>
                         <a href="#" class="intro-video-thumb-link" data-toggle="modal" data-target="#introVideoModal"
-                            data-video-embed="https://www.youtube.com/embed/CrEcmOVZNh0?autoplay=1&amp;rel=0">
-                            <img src="https://img.youtube.com/vi/CrEcmOVZNh0/maxresdefault.jpg"
-                                alt="Tazua intro video thumbnail" class="img-fluid intro-video-thumb">
-                            <span class="intro-video-overlay">
-                                <span class="intro-video-play"><i class="fas fa-play"></i></span>
-                                <span class="intro-video-label">Watch Intro Video</span>
-                            </span>
+                            data-video-embed="https://player.mux.com/EqdrKsoUjSWMKQJPfR4nbU7IP5ibrY7rLWoCiSUzEI00?metadata-video-title=Tazua+Africa+Web&video-title=Tazua+Africa+Web">
+                            <div class="intro-video-thumb"
+                                style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.35) 0%, rgba(118, 75, 162, 0.35) 100%), url('https://img.youtube.com/vi/CrEcmOVZNh0/maxresdefault.jpg'); background-size: cover; background-position: center; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                <span class="intro-video-overlay" style="margin: 0;">
+                                    <span class="intro-video-play"><i class="fas fa-play"></i></span>
+                                    <span class="intro-video-label">Watch Intro Video</span>
+                                </span>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -133,8 +134,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="intro-video-frame-wrap">
-                        <iframe id="introVideoFrame" src="" title="Tazua Intro Video" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        <iframe id="introVideoFrame" src="" title="Tazua Intro Video"
+                            style="width: 100%; border: none; aspect-ratio: 16/9;"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" autoplay
                             allowfullscreen></iframe>
                     </div>
                 </div>
@@ -585,11 +587,16 @@
                         introVideoFrame.setAttribute('src', embedUrl);
                     }
                 });
+                // Auto-play when modal is shown
+                $('#introVideoModal').on('shown.bs.modal', function() {
+                    introVideoFrame.play && introVideoFrame.play();
+                });
             }
 
             if (introVideoModal && introVideoFrame) {
                 $('#introVideoModal').on('hidden.bs.modal', function() {
                     introVideoFrame.setAttribute('src', '');
+                    introVideoFrame.pause && introVideoFrame.pause();
                 });
             }
         });

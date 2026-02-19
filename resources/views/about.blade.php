@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'About Tazua - Creator Platform for Kenya')
-@section('meta_description', 'Learn about Tazua Africa, the first digital platform for Kenyan creators to own their
+@section('meta_description',
+    'Learn about Tazua Africa, the first digital platform for Kenyan creators to own their
     audience and earn sustainable income through mobile-money-first fan support.')
 
 @section('content')
@@ -123,7 +124,8 @@
                         <h3 class="cta-title">Ready to Turn Your Passion into Income?</h3>
                         <p class="cta-subtitle">Join hundreds of Kenyan creators building sustainable businesses on Tazua
                         </p>
-                        <a href="{{ route('blogs.index') }}" class="btn btn-green btn-lg">Get Started Today</a>
+                        <a href="#" class="btn btn-green btn-lg apk-download-trigger"
+                            data-apk-link="{{ asset('tazua_app.apk') }}">Download Tazua APK Now</a>
                         <p class="cta-link">
                             <a href="https://tazua.africa/" target="_blank" class="text-muted">Visit tazua.africa</a>
                         </p>
