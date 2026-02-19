@@ -17,14 +17,14 @@ class UserSeeder extends Seeder
     {
         // Create admin test user
         User::create([
-            'name' => 'Kevin Ochieng',
-            'email' => 'kvnochieng52@gmail.com',
+            'name' => 'Tazua Admin',
+            'email' => 'info@tazua.com',
             'email_verified_at' => now(),
             'password' => Hash::make('Co!nt@nt254'), // Use a secure password
         ]);
 
         echo "Test user created successfully!\n";
-        echo "Email: kvnochieng52@gmail.com\n";
+        echo "Email: info@tazua.com\n";
         echo "Password: password\n";
     }
 }
