@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         // Create admin test user
         User::create([
             'name' => 'Tazua Admin',
-            'email' => 'info@tazua.com',
+            'email' => 'info@tazua.africa',
             'email_verified_at' => now(),
             'password' => Hash::make('Co!nt@nt254'), // Use a secure password
         ]);
